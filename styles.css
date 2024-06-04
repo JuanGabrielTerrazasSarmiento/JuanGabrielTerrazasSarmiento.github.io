@@ -1,12 +1,15 @@
+/* styles.css */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    background-color: #f8f9fa;
+    background-color: #001f3f;
+    color: white;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -32,31 +35,46 @@ header {
 .refresh-btn {
     font-size: 1.2em;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
 }
 
 .filters {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     background-color: #f1f1f1;
     margin-bottom: 10px;
-    flex-wrap: wrap;
 }
 
 .filter-item {
-    margin-right: 20px;
     margin-bottom: 10px;
+    width: 100%;
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .show-report-btn {
-    padding: 5px 10px;
+    padding: 10px 20px;
     cursor: pointer;
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 .summary {
-    padding: 10px 20px;
+    padding: 20px;
     background-color: #e9ecef;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 table {
@@ -69,19 +87,20 @@ table {
 
 table th, table td {
     border: 1px solid #dee2e6;
-    padding: 8px;
+    padding: 10px;
     text-align: left;
 }
 
 table th {
     background-color: #f8f9fa;
+    font-weight: bold;
 }
 
 .additional-tables {
-    padding: 10px 20px;
+    padding: 20px;
 }
 
-
+/* Responsive Design */
 @media (max-width: 768px) {
     header, .filters, .summary, .additional-tables {
         padding: 10px;
@@ -99,4 +118,51 @@ table th {
     table th, table td {
         padding: 6px;
     }
+}
+
+/* Specific Styles to Match PDF */
+header {
+    background-color: #001f3f;
+    color: white;
+}
+
+.filters {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.show-report-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.summary {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+    background-color: #001f3f;
+    color: white;
+    text-transform: uppercase;
+}
+
+.additional-tables table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
 }
