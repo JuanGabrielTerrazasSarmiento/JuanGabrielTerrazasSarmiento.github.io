@@ -1,56 +1,54 @@
 /* styles.css */
 
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
+/* Header Styles */
 header {
     background-color: #001f3f;
     color: white;
-    padding: 10px 20px;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 2em;
+    font-family: 'Helvetica', sans-serif;
+    color: #00aaff;
 }
 
-.refresh-info {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.refresh-info p {
-    margin: 0;
-    margin-right: 10px;
-}
-
-.refresh-btn {
-    font-size: 1.2em;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-}
-
+/* Filter Section Styles */
 .filters {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
 }
 
 .filter-item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 100%;
 }
 
@@ -58,41 +56,69 @@ header {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #001f3f;
+    font-family: 'Helvetica', sans-serif;
 }
 
-.show-report-btn {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #001f3f;
-    color: white;
-    border: none;
+.filter-item select, .filter-item input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
 }
 
+.show-report-btn {
+    padding: 15px 30px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Helvetica', sans-serif;
+    margin-top: 10px;
+}
+
+/* Summary Section Styles */
 .summary {
     padding: 20px;
     background-color: #e9ecef;
     margin-bottom: 10px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
     overflow-x: auto;
     display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 table th, table td {
     border: 1px solid #dee2e6;
     padding: 10px;
     text-align: left;
+    font-family: 'Helvetica', sans-serif;
 }
 
 table th {
-    background-color: #f8f9fa;
+    background-color: #001f3f;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.additional-tables table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
     font-weight: bold;
 }
 
@@ -104,6 +130,10 @@ table th {
 @media (max-width: 768px) {
     header, .filters, .summary, .additional-tables {
         padding: 10px;
+    }
+
+    .filter-container {
+        flex-direction: column;
     }
 
     .filter-item, .show-report-btn {
@@ -118,51 +148,4 @@ table th {
     table th, table td {
         padding: 6px;
     }
-}
-
-/* Specific Styles to Match PDF */
-header {
-    background-color: #001f3f;
-    color: white;
-}
-
-.filters {
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.show-report-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.summary {
-    background-color: #e9ecef;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-table {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-table th {
-    background-color: #001f3f;
-    color: white;
-    text-transform: uppercase;
-}
-
-.additional-tables table th {
-    background-color: #007bff;
-    color: white;
-    text-transform: uppercase;
 }
