@@ -31,7 +31,7 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -41,7 +41,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -58,6 +58,7 @@ header {
     font-weight: bold;
     color: #001f3f;
     font-family: 'Helvetica', sans-serif;
+    font-size: 1.2em;
 }
 
 .filter-item select, .filter-item input[type="date"] {
@@ -66,12 +67,13 @@ header {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    font-family: 'Helvetica', sans-serif;
 }
 
 .show-report-btn {
     padding: 15px 30px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #0000ff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -101,7 +103,7 @@ header {
 }
 
 .light-gray-box {
-    background-color: #e9ecef;
+    background-color: #f0f0f0;
 }
 
 /* Table Styles */
