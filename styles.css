@@ -1,203 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<!-- Header Section -->
-<header>
-    <div class="logo">TAILOPEZ</div>
-</header>
+/* styles.css */
 
-<!-- Filter Section -->
-<section class="filters">
-    <div class="filter-container">
-        <div class="filter-item">
-            <label for="product">CHOOSE PRODUCT</label>
-            <select id="product">
-                <option value="513">(513) viralpages ai</option>
-            </select>
-        </div>
-        <div class="filter-item">
-            <label for="date-range">DATE RANGE</label>
-            <input type="date" id="date-range" value="2024-06-03">
-        </div>
-    </div>
-    <button class="show-report-btn">SUBMIT</button>
-</section>
+/* General Styles */
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
 
-<!-- Summary Section -->
-<section class="summary">
-    <div class="summary-box blue-box">
-        <p>Spend ROI: 1,423.16%<br>ROAS: 15.23<br>Paid Ads CPA: $28.80, Paid Ads EPA: $438.71</p>
-    </div>
-    <div class="summary-box light-gray-box">
-        <p>Total Email Revenue = $0.00<br>Overall AOV = $362.75<br>Last Sale was 6 hr: 24 minutes ago</p>
-    </div>
-</section>
+/* Header Styles */
+header {
+    background-color: #001f3f;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-<!-- Main Table -->
-<section class="main-table">
-    <table>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Funnel ID</th>
-            <th>Name</th>
-            <th>Gross Revenue ($)</th>
-            <th>Net Revenue ($)</th>
-            <th>Net First Time</th>
-            <th>Bump</th>
-            <th>Conversion</th>
-            <th>AOV</th>
-            <th>EPC</th>
-            <th>Unique Visits</th>
-            <th>Upsell Revenue</th>
-            <th>Upsells Earning Per Order</th>
-            <th>Net Recurring</th>
-            <th>Refund</th>
-            <th>New Joins</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>(3561) FS-9363</td>
-            <td>ViralPages.ai Purchase - Facebook</td>
-            <td>3,071.00</td>
-            <td>3,071.00</td>
-            <td>$0.00</td>
-            <td>$0.00</td>
-            <td>4.29%</td>
-            <td>438.71</td>
-            <td>$18.84</td>
-            <td>163.00</td>
-            <td>1,392.00</td>
-            <td>$198.86</td>
-            <td>$0.00</td>
-            <td>$0.00</td>
-            <td>18</td>
-        </tr>
-        <!-- Repeat for other rows -->
-        </tbody>
-    </table>
-</section>
+.logo {
+    font-size: 2em;
+    color: #00aaff;
+}
 
-<!-- Additional Tables -->
-<section class="additional-tables">
-    <table>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Product</th>
-            <th>YT Spend</th>
-            <th>Fb Spend</th>
-            <th>Tiktok Spend</th>
-            <th>Snapchat Spend</th>
-            <th>Total Spend</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>513-viralpages ai</td>
-            <td>$0.00</td>
-            <td>$201.62</td>
-            <td>$0.00</td>
-            <td>$0.00</td>
-            <td>$201.62</td>
-        </tr>
-        <!-- Repeat for other rows -->
-        </tbody>
-    </table>
+/* Filter Section Styles */
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    <!-- Additional Table: Spend Revenue -->
-    <table>
-        <thead>
-        <tr>
-            <th>Spend Revenue</th>
-            <th>Total Spend</th>
-            <th>Profit/Loss</th>
-            <th>Spend ROI (%)</th>
-            <th>CPA</th>
-            <th>EPA</th>
-            <th>ROAS</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>$3,071.00</td>
-            <td>$201.62</td>
-            <td>$2,869.38</td>
-            <td>1,423.16%</td>
-            <td>$28.80</td>
-            <td>$438.71</td>
-            <td>15.23</td>
-        </tr>
-        </tbody>
-    </table>
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+}
 
-    <!-- Additional Table: Sources (Top 10) -->
-    <table>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Sources (Top 10)</th>
-            <th>Revenue ($)</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>ig</td>
-            <td>$2,213.00</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>fb</td>
-            <td>$661.00</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>unknown</td>
-            <td>$591.00</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>email autoresponder</td>
-            <td>$494.00</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>slider</td>
-            <td>$394.00</td>
-        </tr>
-        </tbody>
-    </table>
+.filter-item {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
 
-    <!-- Additional Table: Price Slab -->
-    <table>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Price Slab</th>
-            <th>Qty</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>$197.00</td>
-            <td>11</tr>
-        <tr>
-            <td>2</td>
-            <td>$497.00</td>
-            <td>1</tr>
-        </tbody>
-    </table>
-</section>
-</body>
-</html>
+.filter-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #001f3f;
+    font-size: 1.2em;
+}
+
+.filter-item select, .filter-item input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.show-report-btn {
+    padding: 15px 30px;
+    cursor: pointer;
+    background-color: #0000ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Summary Section Styles */
+.summary {
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.summary-box {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.blue-box {
+    background-color: #e6f7ff;
+}
+
+.light-gray-box {
+    background-color: #f0f0f0;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #001f3f;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.additional-tables table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.additional-tables {
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header, .filters, .summary, .additional-tables {
+        padding: 10px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .filter-item, .show-report-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    table th, table td {
+        padding: 6px;
+    }
+}
