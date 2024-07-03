@@ -75,6 +75,10 @@
         function startChat() {
             const selectedProgram = document.querySelector('input[name="program"]:checked').value;
             loadOlarkInstance(selectedProgram);
+
+            // Hide the chat button and selector form
+            document.getElementById('chatButton').style.display = 'none';
+            document.getElementById('chatSelector').style.display = 'none';
         }
 
         function loadOlarkInstance(program) {
@@ -101,6 +105,5 @@
             olark('api.box.expand');
         }
     </script>
-    <p> version 15 expanded chatgpt</p>
 </body>
 </html>
