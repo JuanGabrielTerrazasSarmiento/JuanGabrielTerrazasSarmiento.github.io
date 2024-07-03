@@ -9,14 +9,14 @@
             font-family: Arial, sans-serif;
         }
 
-        .chat-button {
+        .chat-button, .close-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background-color: #61a8de;
             color: white;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -24,24 +24,20 @@
             font-size: 16px;
         }
 
-        .chat-button svg {
-            margin-right: 10px;
+        .chat-button {
+            display: flex;
         }
 
         .close-button {
-            background-color: #61a8de;
-            color: white;
+            display: none;
             width: 40px;
             height: 40px;
+            padding: 0;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
+        }
+
+        .chat-button svg, .close-button svg {
+            margin-right: 10px;
         }
 
         .form-popup {
@@ -159,13 +155,11 @@
 
         document.getElementById('formPopup').style.display = 'none';
         document.getElementById('closeButton').style.display = 'none';
+        document.getElementById('chatButton').style.display = 'none';
         olark('api.box.expand');
     });
-</script>
 
-<!-- Olark code -->
-<script type="text/javascript" async>
-    (function (o, l, a, r, k, y) {
+    (function(o, l, a, r, k, y) {
         if (o.olark) return;
         r = "script";
         y = l.createElement(r);
@@ -173,14 +167,14 @@
         y.async = 1;
         y.src = "//" + a;
         r.parentNode.insertBefore(y, r);
-        y = o.olark = function () { k.s.push(arguments); k.t.push(+new Date) };
-        y.extend = function (i, j) { y("extend", i, j) };
-        y.identify = function (i) { y("identify", k.i = i) };
-        y.configure = function (i, j) { y("configure", i, j); k.c[i] = j };
+        y = o.olark = function() { k.s.push(arguments); k.t.push(+new Date) };
+        y.extend = function(i, j) { y("extend", i, j) };
+        y.identify = function(i) { y("identify", k.i = i) };
+        y.configure = function(i, j) { y("configure", i, j); k.c[i] = j };
         k = y._ = { s: [], t: [+new Date], c: {}, l: a };
     })(window, document, "static.olark.com/jsclient/loader.js");
     olark.identify('YOUR_OLARK_SITE_ID');
 </script>
-<p>version 19 with stylized form, clickable X button in form</p>
+<p>version 20 with potential fixes</p>
 </body>
 </html>
