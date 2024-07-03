@@ -1,6 +1,6 @@
-function openChatSelector() {
+document.getElementById('chatButton').addEventListener('click', function() {
     document.getElementById('chatSelector').style.display = 'block';
-}
+});
 
 function startChat() {
     const selectedProgram = document.querySelector('input[name="program"]:checked').value;
