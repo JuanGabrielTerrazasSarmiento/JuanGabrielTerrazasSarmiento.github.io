@@ -18,6 +18,9 @@
     const surveyData = event.detail;
     const selectedGroupID = document.querySelector('input[name="olark-group-bd65e555-c3ed-4bc5-8076-2bfcff1febc6"]:checked').id;
 
+    // Log the selected group ID
+    console.log('Selected Group ID:', selectedGroupID);
+
     // Map the selected radio button ID to Olark group IDs
     const groupMapping = {
       'olark-radio-button-#2-0': '2733f1b4f9b63faad8dc40e96698e7c7', // 9 Levers
@@ -26,12 +29,17 @@
       'olark-radio-button-#2-3': 'bc72a0eb3298e127c97b711d12dad696'  // Other programs
     };
 
+    // Log the group mapping
+    console.log('Group Mapping:', groupMapping);
+
     // Set the group configuration based on the selected radio button ID
     if (groupMapping[selectedGroupID]) {
+      console.log('Configuring Olark Group:', groupMapping[selectedGroupID]);
       olark.configure('system.group', groupMapping[selectedGroupID]);
     }
   });
 </script>
+
 
 
 <!-- End Olark embed code -->
@@ -39,7 +47,7 @@
 
 </head>
 <body>
-	<p>Dummy site to test Olark, script added, script with group embeds v7 chatgpt</p>
+	<p>Dummy site to test Olark, script added, script with group embeds v8 chatgpt</p>
     <!-- Olark pre-chat form will be injected by Clark's system -->
 
 
