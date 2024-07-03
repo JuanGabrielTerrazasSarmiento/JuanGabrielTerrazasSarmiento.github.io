@@ -96,8 +96,11 @@
             olark.configure('system.group', groupCode);
 
             console.log(`Loaded Olark group: ${groupCode}`);
+
+            // Automatically open the chat window
+            olark('api.box.expand');
         }
     </script>
-    <p>version 13 chatgpt</p>
+    <p> version 15 expanded chatgpt</p>
 </body>
 </html>
