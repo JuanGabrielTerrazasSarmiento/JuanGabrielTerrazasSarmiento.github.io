@@ -25,50 +25,9 @@
     </script>
 </head>
 <body>
-	<p>Dummy site to test Olark, script added, script with group embeds v2</p>
+	<p>Dummy site to test Olark, script added, script with group embeds v3 - testing chat window</p>
     <!-- Olark pre-chat form will be injected by Clark's system -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait for the Olark pre-chat form to be rendered by Clark's system
-            const observer = new MutationObserver(function(mutations, me) {
-                const preChatForm = document.querySelector('form'); // Adjust the selector to match the actual form class/id
-                if (preChatForm) {
-                    // Form found, stop observing
-                    me.disconnect();
 
-                    // Listen for form submission
-                    preChatForm.addEventListener('submit', function(event) {
-                        const selectedGroup = document.querySelector('input[name="groupSelection"]:checked'); // Adjust this to match the actual input name
-                        if (selectedGroup) {
-                            const groupId = selectedGroup.value;
-
-                            switch (groupId) {
-                                case '9 Levers':
-                                    olark.configure('system.group', '2733f1b4f9b63faad8dc40e96698e7c7'); // 9 Levers Agent Group
-                                    break;
-                                case 'ViralPages.ai':
-                                    olark.configure('system.group', '8a6a0ee5b49d35669bd89bb42e62df2f'); // ViralPages Agent Group
-                                    break;
-                                case '300 Mastermind':
-                                    olark.configure('system.group', 'c5e72d5632d57af246b5b80c7bf3f554'); // 300 Mastermind Agent Group
-                                    break;
-                                case 'Other programs':
-                                    olark.configure('system.group', 'bc72a0eb3298e127c97b711d12dad696'); // Other Programs Agent Group
-                                    break;
-                                default:
-                                    console.error('Unknown group selected');
-                            }
-                        }
-                    });
-                }
-            });
-
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-        });
-    </script>
 </body>
 </html>
