@@ -25,14 +25,14 @@
     </script>
 </head>
 <body>
-	<p>Dummy site to test Olark, script added, script with group embeds</p>
+	<p>Dummy site to test Olark, script added, script with group embeds v2</p>
     <!-- Olark pre-chat form will be injected by Clark's system -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Wait for the Olark pre-chat form to be rendered by Clark's system
             const observer = new MutationObserver(function(mutations, me) {
-                const preChatForm = document.querySelector('.olark-form'); // Adjust the selector to match the actual form class/id
+                const preChatForm = document.querySelector('form'); // Adjust the selector to match the actual form class/id
                 if (preChatForm) {
                     // Form found, stop observing
                     me.disconnect();
@@ -44,16 +44,16 @@
                             const groupId = selectedGroup.value;
 
                             switch (groupId) {
-                                case '2733f1b4f9b63faad8dc40e96698e7c7':
+                                case '9 Levers':
                                     olark.configure('system.group', '2733f1b4f9b63faad8dc40e96698e7c7'); // 9 Levers Agent Group
                                     break;
-                                case 'c5e72d5632d57af246b5b80c7bf3f554':
-                                    olark.configure('system.group', 'c5e72d5632d57af246b5b80c7bf3f554'); // 300 Mastermind Agent Group
-                                    break;
-                                case '8a6a0ee5b49d35669bd89bb42e62df2f':
+                                case 'ViralPages.ai':
                                     olark.configure('system.group', '8a6a0ee5b49d35669bd89bb42e62df2f'); // ViralPages Agent Group
                                     break;
-                                case 'bc72a0eb3298e127c97b711d12dad696':
+                                case '300 Mastermind':
+                                    olark.configure('system.group', 'c5e72d5632d57af246b5b80c7bf3f554'); // 300 Mastermind Agent Group
+                                    break;
+                                case 'Other programs':
                                     olark.configure('system.group', 'bc72a0eb3298e127c97b711d12dad696'); // Other Programs Agent Group
                                     break;
                                 default:
