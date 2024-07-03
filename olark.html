@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Olark Group Selector</title>
-    <script type="text/javascript" async>
-        (function(o,l,a,r,k,y){
-            if(o.olark)return; 
-            r="script";
-            y=l.createElement(r);
-            r=l.getElementsByTagName(r)[0];
-            y.async=1;y.src="//"+a;
-            r.parentNode.insertBefore(y,r);
-            y=o.olark=function(){
-                k.s.push(arguments);
-                k.t.push(+new Date)
-            };
-            y.extend=function(i,j){y("extend",i,j)};
-            y.identify=function(i){y("identify",k.i=i)};
-            y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
-            k=y._={s:[],t:[+new Date],c:{},l:a};
-        })(window,document,"static.olark.com/jsclient/loader.js");
+<script type="text/javascript" async>
+;(function(o,l,a,r,k,y){if(o.olark)return;r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
+y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};
+y.extend=function(i,j){y("extend",i,j)};y.identify=function(i){y("identify",k.i=i)};y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
+k=y._={s:[],t:[+new Date],c:{},l:a};})(window,document,"static.olark.com/jsclient/loader.js");
 
-        olark.identify('3192-298-10-9167');
-    </script>
+olark.identify('3192-298-10-9167');
+
+olark("api.visitor.onChangeProvidedDetails", function (event) {
+    var groupSelection = event.newValue["Select your program"];
+    switch (groupSelection) {
+        case "9 Levers":
+            olark.configure('system.group', '2733f1b4f9b63faad8dc40e96698e7c7');
+            break;
+        case "300 Mastermind":
+            olark.configure('system.group', 'c5e72d5632d57af246b5b80c7bf3f554');
+            break;
+        case "ViralPages.ai":
+            olark.configure('system.group', '8a6a0ee5b49d35669bd89bb42e62df2f');
+            break;
+        case "Other programs":
+            olark.configure('system.group', 'bc72a0eb3298e127c97b711d12dad696');
+            break;
+    }
+});
+</script>
+
 </head>
 <body>
-	<p>Dummy site to test Olark, script added, script with group embeds v3 - testing chat window</p>
+	<p>Dummy site to test Olark, script added, script with group embeds v4 chatgpt</p>
     <!-- Olark pre-chat form will be injected by Clark's system -->
 
 
