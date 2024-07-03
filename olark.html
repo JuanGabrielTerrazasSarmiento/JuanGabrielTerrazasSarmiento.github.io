@@ -100,28 +100,18 @@
         </button>
     </div>
 
-<div class="form-popup" id="formPopup">
-    <h2>Select your program</h2>
-    <div class="form-content">
-        <div>
-            <input type="radio" id="9Levers" name="program" value="9Levers">
-            <label for="9Levers">9 Levers</label>
-        </div>
-        <div>
-            <input type="radio" id="ViralPages" name="program" value="ViralPages">
-            <label for="ViralPages">ViralPages.ai</label>
-        </div>
-        <div>
-            <input type="radio" id="300Mastermind" name="program" value="300Mastermind">
-            <label for="300Mastermind">300 Mastermind</label>
-        </div>
-        <div>
-            <input type="radio" id="OtherPrograms" name="program" value="OtherPrograms">
-            <label for="OtherPrograms">Other programs</label>
-        </div>
+    <div class="form-popup" id="pre-chat-form">
+        <h3>Select your program:</h3>
+        <input type="radio" id="option1" name="group" value="9 Levers">
+        <label for="option1">9 Levers</label><br>
+        <input type="radio" id="option2" name="group" value="300 Mastermind">
+        <label for="option2">300 Mastermind</label><br>
+        <input type="radio" id="option3" name="group" value="ViralPages.ai">
+        <label for="option3">ViralPages.ai</label><br>
+        <input type="radio" id="option4" name="group" value="Other programs">
+        <label for="option4">Other programs</label><br><br>
+        <button id="start-chat">Start chat</button>
     </div>
-    <button class="start-chat-button" id="startChatButton">Start chat</button>
-</div>
 
     <script>
         document.getElementById('chat-button').addEventListener('click', function () {
@@ -173,6 +163,6 @@
             }
         });
     </script>
-    <p>Version 20 with improved Let's chat button and form</p>
+    <p>Version 18 with improved Let's chat button</p>
 </body>
 </html>
