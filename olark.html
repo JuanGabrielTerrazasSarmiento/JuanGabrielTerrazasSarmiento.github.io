@@ -9,6 +9,51 @@
 /* custom configuration goes here (www.olark.com/documentation) */
 olark.identify('3192-298-10-9167');</script>
 <!-- end olark code -->
+		<script type="text/javascript">
+  // Wait for Olark to be ready
+  olark('api.chat.onReady', function() {
+    // Function to handle pre-chat form submission
+    function handlePreChatFormSubmit() {
+      // Get the selected program from the pre-chat form
+      var selectedProgram = document.querySelector('input[name="custom_radio"]:checked').value;
+      
+      // Check the selected program and assign to the appropriate group
+      if (selectedProgram === '9 Levers') {
+        olark('api.chat.updateVisitorNickname', {
+          snippet: function (nickname) {
+            return nickname + ' (9 Levers)';
+          }
+        });
+        olark('api.groups.assignTo', { group: '9 Levers Agent Group' });
+      } else if (selectedProgram === 'ViralPages.ai') {
+        olark('api.chat.updateVisitorNickname', {
+          snippet: function (nickname) {
+            return nickname + ' (ViralPages.ai)';
+          }
+        });
+        olark('api.groups.assignTo', { group: 'ViralPages Agent Group' });
+      } else if (selectedProgram === '300 Mastermind') {
+        olark('api.chat.updateVisitorNickname', {
+          snippet: function (nickname) {
+            return nickname + ' (300 Mastermind)';
+          }
+        });
+        olark('api.groups.assignTo', { group: '300 Mastermind Agent Group' });
+      } else {
+        olark('api.chat.updateVisitorNickname', {
+          snippet: function (nickname) {
+            return nickname + ' (Other Programs)';
+          }
+        });
+        olark('api.groups.assignTo', { group: 'Other Programs Agent Group' });
+      }
+    }
+
+    // Add event listener to the pre-chat form submit button
+    document.querySelector('.olark-form-submit-button').addEventListener('click', handlePreChatFormSubmit);
+  });
+</script>
+
 	</body>
 </html>
 
