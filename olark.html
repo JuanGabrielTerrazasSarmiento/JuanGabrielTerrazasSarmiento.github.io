@@ -43,15 +43,47 @@
             margin-right: 10px;
         }
 
-        #pre-chat-form {
+        .form-popup {
             position: fixed;
-            bottom: 100px;
+            bottom: 70px;
             right: 20px;
             background-color: white;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             display: none;
+            width: 300px;
+
+        .form-popup h2 {
+            margin-top: 0;
+            background-color: #61a8de;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+
+        .form-popup .form-content {
+            padding: 10px 0;
+        }
+
+        .form-popup .form-content div {
+            margin-bottom: 10px;
+        }
+
+        .form-popup .form-content input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .form-popup .start-chat-button {
+            background-color: #5cba5c;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -68,7 +100,7 @@
         </button>
     </div>
 
-    <div id="pre-chat-form">
+    <div class="form-popup" id="pre-chat-form">
         <h3>Select your program:</h3>
         <input type="radio" id="option1" name="group" value="9 Levers">
         <label for="option1">9 Levers</label><br>
