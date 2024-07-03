@@ -12,30 +12,30 @@
   olark.identify('3192-298-10-9167');
 </script>
 <!-- end olark code -->
-
 <script type="text/javascript">
   window.addEventListener('olark:survey:submitted', function(event) {
-    const surveyData = event.detail;
-    const selectedGroupID = document.querySelector('input[name="olark-group-bd65e555-c3ed-4bc5-8076-2bfcff1febc6"]:checked').id;
+    const selectedGroup = document.querySelector('input[name="olark-group-d9bcbe48-d430-4961-bae1-b32e4ce59193"]:checked').value;
 
-    // Log the selected group ID
-    console.log('Selected Group ID:', selectedGroupID);
+    // Log the selected radio button value to the console
+    console.log('Selected Group:', selectedGroup);
 
-    // Map the selected radio button ID to Olark group IDs
+    // Map the selected radio button value to Olark group IDs
     const groupMapping = {
-      'olark-radio-button-#2-0': '2733f1b4f9b63faad8dc40e96698e7c7', // 9 Levers
-      'olark-radio-button-#2-1': '8a6a0ee5b49d35669bd89bb42e62df2f', // ViralPages.ai
-      'olark-radio-button-#2-2': 'c5e72d5632d57af246b5b80c7bf3f554', // 300 Mastermind
-      'olark-radio-button-#2-3': 'bc72a0eb3298e127c97b711d12dad696'  // Other programs
+      '9 Levers': '2733f1b4f9b63faad8dc40e96698e7c7',
+      'ViralPages.ai': '8a6a0ee5b49d35669bd89bb42e62df2f',
+      '300 Mastermind': 'c5e72d5632d57af246b5b80c7bf3f554',
+      'Other programs': 'bc72a0eb3298e127c97b711d12dad696'
     };
 
-    // Log the group mapping
-    console.log('Group Mapping:', groupMapping);
+    // Log the group ID corresponding to the selected value
+    console.log('Mapped Group ID:', groupMapping[selectedGroup]);
 
-    // Set the group configuration based on the selected radio button ID
-    if (groupMapping[selectedGroupID]) {
-      console.log('Configuring Olark Group:', groupMapping[selectedGroupID]);
-      olark.configure('system.group', groupMapping[selectedGroupID]);
+    // Set the group configuration based on the selected group
+    if (groupMapping[selectedGroup]) {
+      olark.configure('system.group', groupMapping[selectedGroup]);
+      console.log('Olark configured to group:', groupMapping[selectedGroup]);
+    } else {
+      console.warn('No group mapping found for selected value:', selectedGroup);
     }
   });
 </script>
@@ -47,7 +47,7 @@
 
 </head>
 <body>
-	<p>Dummy site to test Olark, script added, script with group embeds v8 chatgpt</p>
+	<p>Dummy site to test Olark, script added, script with group embeds v9 chatgpt</p>
     <!-- Olark pre-chat form will be injected by Clark's system -->
 
 
