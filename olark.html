@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,6 +54,18 @@
             border-radius: 20px;
             display: none;
         }
+        #pre-chat-form {
+            font-family: Helvetica;
+        }
+        #pre-chat-form button {
+            padding:5px;
+            border-radius: 20px;
+            width: 100%;
+            background-color: #62d286;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -71,14 +84,14 @@
     <div id="pre-chat-form">
         <h3>Select your program:</h3>
         <input type="radio" id="option1" name="group" value="9 Levers">
-        <label for="option1">9 Levers</label><br>
+        <label for="option1">9 Levers</label><br><br>
         <input type="radio" id="option2" name="group" value="300 Mastermind">
-        <label for="option2">300 Mastermind</label><br>
+        <label for="option2">300 Mastermind</label><br><br>
         <input type="radio" id="option3" name="group" value="ViralPages.ai">
-        <label for="option3">ViralPages.ai</label><br>
+        <label for="option3">ViralPages.ai</label><br><br>
         <input type="radio" id="option4" name="group" value="Other programs">
-        <label for="option4">Other programs</label><br><br>
-        <button id="start-chat">Start chat</button>
+        <label for="option4">Other programs</label><br><br><br>
+        <button id="start-chat">START CHAT</button>
     </div>
 
     <script>
@@ -131,6 +144,6 @@
             }
         });
     </script>
-    <p>Version 18 with improved Let's chat button rounded form</p>
+    <p>Version 19 with improved Let's chat button and partially improved form popup</p>
 </body>
 </html>
