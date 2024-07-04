@@ -168,15 +168,13 @@
             })(window, document, "static.olark.com/jsclient/loader.js");
 
             // Configure Olark with the selected group and expand the chat box
-            olark('api.chat.onReady', function() {
-                olark.identify('3192-298-10-9167');
-                olark.configure('system.group', groupCode);
-                olark('api.box.expand');
-
-        });
+            olark.identify('3192-298-10-9167');
+            olark.configure('system.group', groupCode);
+            // Automatically open the chat window
+            olark('api.box.expand');
         }
     });
 </script>
-<p>version 0.20 with chatgpt x button yeah</p>
+<p>version 0.20 with chatgpt x button trying to launch olark</p>
 </body>
 </html>
