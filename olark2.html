@@ -147,10 +147,11 @@
                     break;
             }
 
+            preChatForm.style.display = 'none';
             chatButton.style.display = 'none';
             closeButton.style.display = 'none';
-            preChatForm.style.display = 'none';
 
+            // Load Olark script
             (function (o, l, a, r, k, y) {
                 if (o.olark) return;
                 r = "script";
@@ -166,14 +167,15 @@
                 k = y._ = { s: [], t: [+new Date], c: {}, l: a };
             })(window, document, "static.olark.com/jsclient/loader.js");
 
+            // Configure Olark with the selected group and expand the chat box
             olark('api.chat.onReady', function() {
                 olark.identify('3192-298-10-9167');
                 olark.configure('system.group', groupCode);
                 olark('api.box.expand');
-            });
+           });
         }
     });
 </script>
-<p>Version 18 with improved Let's chat button</p>
+<p>version 0.20 with chatgpt x button yeah</p>
 </body>
 </html>
