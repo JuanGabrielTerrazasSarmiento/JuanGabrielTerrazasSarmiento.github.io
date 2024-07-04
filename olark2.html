@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,19 +33,28 @@
             font-size: 16px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s
+
+            chat-button {
+            background-color: #4fb0e8;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
         }
 
-        #chat-button:hover, #close-button:hover {
+        #chat-button:hover {
             background-color: #4097cc;
         }
 
-        #chat-button svg, #close-button svg {
+        #chat-button svg {
             margin-right: 10px;
-        }
-
-        #close-button svg {
-            margin: 0;
         }
 
         #pre-chat-form {
@@ -56,127 +66,102 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
             display: none;
+        }
+        #pre-chat-form {
             font-family: Helvetica;
         }
-
-        #pre-chat-form h3 {
-            background-color: #4fb0e8;
-            color: white;
-            padding: 10px;
-            border-radius: 20px 20px 0 0;
-            margin: -20px -20px 20px -20px;
-        }
-
         #pre-chat-form button {
-            padding: 10px;
+            padding:5px;
             border-radius: 20px;
             width: 100%;
             background-color: #62d286;
             color: white;
             border: none;
             font-size: 16px;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
-<div id="chat-button-container">
-    <button id="chat-button">
-        <svg viewBox="0 0 34 31" width="34" height="31" aria-hidden="true" role="img" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.61516 22.4845L3.35656 21.9322C2.01727 21.7915 1 20.6622 1 19.3154V6.44089C1 5.09407 2.01727 3.96471 3.35656 3.82401C9.10121 3.22057 23.8176 1.67437 30.0934 1.01451C30.8353 0.936259 31.5749 1.17703 32.1294 1.67588C32.6832 2.17473 33 2.88575 33 3.63139C33 8.31288 33 17.4426 33 22.1249C33 22.8705 32.6832 23.5808 32.1294 24.0804C31.5749 24.5792 30.8353 24.8192 30.0934 24.7417L14.8925 23.1444C13.4403 26.7304 10.0259 29.038 5.674 29.5414C5.45881 29.5624 5.25565 29.4375 5.17664 29.2359C5.09839 29.0342 5.1646 28.8048 5.33765 28.6746C7.20739 27.2518 8.36687 25.3655 8.61516 22.4845Z" stroke="white" stroke-width="2"></path>
-            <circle cx="17" cy="13" r="2" fill="white"></circle>
-            <circle cx="25" cy="13" r="2" fill="white"></circle>
-            <circle cx="9" cy="13" r="2" fill="white"></circle>
-        </svg>
-        Let's chat!
-    </button>
-    <button id="close-button" style="display: none;">
+    <div id="chat-button-container">
+        <button id="chat-button">
+            <svg viewBox="0 0 34 31" width="34" height="31" aria-hidden="true" role="img" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.61516 22.4845L3.35656 21.9322C2.01727 21.7915 1 20.6622 1 19.3154V6.44089C1 5.09407 2.01727 3.96471 3.35656 3.82401C9.10121 3.22057 23.8176 1.67437 30.0934 1.01451C30.8353 0.936259 31.5749 1.17703 32.1294 1.67588C32.6832 2.17473 33 2.88575 33 3.63139C33 8.31288 33 17.4426 33 22.1249C33 22.8705 32.6832 23.5808 32.1294 24.0804C31.5749 24.5792 30.8353 24.8192 30.0934 24.7417L14.8925 23.1444C13.4403 26.7304 10.0259 29.038 5.674 29.5414C5.45881 29.5624 5.25565 29.4375 5.17664 29.2359C5.09839 29.0342 5.1646 28.8048 5.33765 28.6746C7.20739 27.2518 8.36687 25.3655 8.61516 22.4845Z" stroke="white" stroke-width="2"></path>
+                <circle cx="17" cy="13" r="2" fill="white"></circle>
+                <circle cx="25" cy="13" r="2" fill="white"></circle>
+                <circle cx="9" cy="13" r="2" fill="white"></circle>
+            </svg>
+            Let's chat!
+        </button>
+        <button id="close-button" style="display: none;">
         <svg viewBox="0 0 34 31" width="34" height="31" aria-hidden="true" role="img" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M2.6,2.6 L31.4,31.4 M2.6,31.4 L31.4,2.6" stroke="white" stroke-width="4"></path>
         </svg>
     </button>
-</div>
+    </div>
 
-<div id="pre-chat-form">
-    <h3>Select your program:</h3>
-    <input type="radio" id="option1" name="group" value="9 Levers">
-    <label for="option1">9 Levers</label><br><br>
-    <input type="radio" id="option2" name="group" value="300 Mastermind">
-    <label for="option2">300 Mastermind</label><br><br>
-    <input type="radio" id="option3" name="group" value="ViralPages.ai">
-    <label for="option3">ViralPages.ai</label><br><br>
-    <input type="radio" id="option4" name="group" value="Other programs">
-    <label for="option4">Other programs</label><br><br><br>
-    <button id="start-chat">START CHAT</button>
-</div>
+    <div id="pre-chat-form">
+        <h3>Select your program:</h3>
+        <input type="radio" id="option1" name="group" value="9 Levers">
+        <label for="option1">9 Levers</label><br><br>
+        <input type="radio" id="option2" name="group" value="300 Mastermind">
+        <label for="option2">300 Mastermind</label><br><br>
+        <input type="radio" id="option3" name="group" value="ViralPages.ai">
+        <label for="option3">ViralPages.ai</label><br><br>
+        <input type="radio" id="option4" name="group" value="Other programs">
+        <label for="option4">Other programs</label><br><br><br>
+        <button id="start-chat">START CHAT</button>
+    </div>
 
-<script>
-    const chatButton = document.getElementById('chat-button');
-    const closeButton = document.getElementById('close-button');
-    const preChatForm = document.getElementById('pre-chat-form');
+    <script>
+        document.getElementById('chat-button').addEventListener('click', function () {
+            document.getElementById('pre-chat-form').style.display = 'block';
+        });
 
-    chatButton.addEventListener('click', function () {
-        preChatForm.style.display = 'block';
-        chatButton.style.display = 'none';
-        closeButton.style.display = 'flex';
-    });
+        document.getElementById('start-chat').addEventListener('click', function () {
+            const selectedGroup = document.querySelector('input[name="group"]:checked').value;
+            
+            if (selectedGroup) {
+                let groupCode = '';
+                switch (selectedGroup) {
+                    case '9 Levers':
+                        groupCode = '2733f1b4f9b63faad8dc40e96698e7c7';
+                        break;
+                    case '300 Mastermind':
+                        groupCode = 'c5e72d5632d57af246b5b80c7bf3f554';
+                        break;
+                    case 'ViralPages.ai':
+                        groupCode = '8a6a0ee5b49d35669bd89bb42e62df2f';
+                        break;
+                    case 'Other programs':
+                        groupCode = 'bc72a0eb3298e127c97b711d12dad696';
+                        break;
+                }
 
-    closeButton.addEventListener('click', function () {
-        preChatForm.style.display = 'none';
-        chatButton.style.display = 'flex';
-        closeButton.style.display = 'none';
-    });
+                document.getElementById('chat-button-container').style.display = 'none';
+                document.getElementById('pre-chat-form').style.display = 'none';
 
-    document.getElementById('start-chat').addEventListener('click', function () {
-        const selectedGroup = document.querySelector('input[name="group"]:checked').value;
+                (function (o, l, a, r, k, y) {
+                    if (o.olark) return;
+                    r = "script";
+                    y = l.createElement(r);
+                    r = l.getElementsByTagName(r)[0];
+                    y.async = 1;
+                    y.src = "//" + a;
+                    r.parentNode.insertBefore(y, r);
+                    y = o.olark = function () { k.s.push(arguments); k.t.push(+new Date); };
+                    y.extend = function (i, j) { y("extend", i, j); };
+                    y.identify = function (i) { y("identify", k.i = i); };
+                    y.configure = function (i, j) { y("configure", i, j); k.c[i] = j; };
+                    k = y._ = { s: [], t: [+new Date], c: {}, l: a };
+                })(window, document, "static.olark.com/jsclient/loader.js");
 
-        if (selectedGroup) {
-            let groupCode = '';
-            switch (selectedGroup) {
-                case '9 Levers':
-                    groupCode = '2733f1b4f9b63faad8dc40e96698e7c7';
-                    break;
-                case '300 Mastermind':
-                    groupCode = 'c5e72d5632d57af246b5b80c7bf3f554';
-                    break;
-                case 'ViralPages.ai':
-                    groupCode = '8a6a0ee5b49d35669bd89bb42e62df2f';
-                    break;
-                case 'Other programs':
-                    groupCode = 'bc72a0eb3298e127c97b711d12dad696';
-                    break;
-            }
-
-            preChatForm.style.display = 'none';
-            chatButton.style.display = 'none';
-            closeButton.style.display = 'none';
-
-            // Load Olark script
-            (function (o, l, a, r, k, y) {
-                if (o.olark) return;
-                r = "script";
-                y = l.createElement(r);
-                r = l.getElementsByTagName(r)[0];
-                y.async = 1;
-                y.src = "//" + a;
-                r.parentNode.insertBefore(y, r);
-                y = o.olark = function () { k.s.push(arguments); k.t.push(+new Date); };
-                y.extend = function (i, j) { y("extend", i, j); };
-                y.identify = function (i) { y("identify", k.i = i); };
-                y.configure = function (i, j) { y("configure", i, j); k.c[i] = j; };
-                k = y._ = { s: [], t: [+new Date], c: {}, l: a };
-            })(window, document, "static.olark.com/jsclient/loader.js");
-
-            // Configure Olark with the selected group and expand the chat box
-            olark('api.chat.onReady', function() {
                 olark.identify('3192-298-10-9167');
                 olark.configure('system.group', groupCode);
-                olark('api.box.expand');
-
+                // Automatically open the chat window
+            olark('api.box.expand');
+            }
         });
-        }
-    });
-</script>
-<p>version 0.20 with chatgpt x button</p>
+    </script>
+    <p>Version 19 with improved Let's chat button and partially improved form popup</p>
 </body>
 </html>
