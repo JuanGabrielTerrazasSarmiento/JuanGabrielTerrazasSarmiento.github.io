@@ -147,9 +147,9 @@
                     break;
             }
 
+            preChatForm.style.display = 'none';
             chatButton.style.display = 'none';
             closeButton.style.display = 'none';
-            preChatForm.style.display = 'none';
 
             (function (o, l, a, r, k, y) {
                 if (o.olark) return;
@@ -166,13 +166,14 @@
                 k = y._ = { s: [], t: [+new Date], c: {}, l: a };
             })(window, document, "static.olark.com/jsclient/loader.js");
 
-            olark.identify('3192-298-10-9167');
-            olark.configure('system.group', groupCode);
-            // Automatically open the chat window
-            olark('api.box.expand');
+            olark('api.chat.onReady', function() {
+                olark.identify('3192-298-10-9167');
+                olark.configure('system.group', groupCode);
+                olark('api.box.expand');
+            });
         }
     });
 </script>
-    <p>version 0.19 with X button</p>
+<p>version 0.20 with chatgpt x button</p>
 </body>
 </html>
